@@ -1,0 +1,262 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;900&family=DM+Serif+Text:wght@400;700&family=DM+Mono:wght@400;500&display=swap');
+
+/* Nuobrutalism Design System with OKLCH Colors */
+
+@layer base {
+  :root {
+    /* OKLCH Color System - Enhanced with more vibrant colors */
+    --background: oklch(1.0000 0 0); /* Pure white */
+    --foreground: oklch(0 0 0); /* Pure black */
+    
+    --card: oklch(1.0000 0 0); /* Pure white */
+    --card-foreground: oklch(0 0 0); /* Pure black */
+    
+    --primary: oklch(0.6489 0.2370 26.9728); /* Vivid warm pink-orange */
+    --primary-foreground: oklch(1.0000 0 0); /* White */
+    
+    --secondary: oklch(0.8500 0.1500 120); /* Vibrant green */
+    --secondary-foreground: oklch(0 0 0); /* Black */
+    
+    --accent: oklch(0.7500 0.2000 270); /* Electric purple */
+    --accent-foreground: oklch(1.0000 0 0); /* White */
+    
+    --muted: oklch(0.9500 0.0200 0); /* Light gray */
+    --muted-foreground: oklch(0.4000 0 0); /* Dark gray */
+    
+    --destructive: oklch(0.6000 0.2500 15); /* Bright red */
+    --destructive-foreground: oklch(1.0000 0 0); /* White */
+    
+    --border: oklch(0 0 0); /* Black borders for brutalism */
+    --input: oklch(1.0000 0 0); /* White inputs */
+    --ring: oklch(0.6489 0.2370 26.9728); /* Primary color for focus */
+    
+    /* Additional vibrant colors */
+    --teal: oklch(0.6000 0.1800 180); /* Vibrant teal - navbar color */
+    --teal-foreground: oklch(1.0000 0 0); /* White text on teal */
+    --yellow: oklch(0.8500 0.1500 90); /* Bright yellow */
+    --yellow-foreground: oklch(0 0 0); /* Black text on yellow */
+    --pink: oklch(0.7500 0.2000 330); /* Hot pink */
+    --pink-foreground: oklch(1.0000 0 0); /* White text on pink */
+    --blue: oklch(0.6500 0.2000 240); /* Electric blue */
+    --blue-foreground: oklch(1.0000 0 0); /* White text on blue */
+    
+    /* --navBlue:  oklch(62.25% 0.102 232.73); */
+
+    /* Brutalist Shadows */
+    --shadow: 4px 4px 0px oklch(0 0 0);
+    --shadow-sm: 2px 2px 0px oklch(0 0 0);
+    --shadow-lg: 8px 8px 0px oklch(0 0 0);
+    --shadow-xl: 12px 12px 0px oklch(0 0 0);
+    --shadow-colored: 4px 4px 0px oklch(0.6489 0.2370 26.9728);
+    --shadow-teal: 4px 4px 0px oklch(0.5000 0.1500 180);
+    
+    /* Typography */
+    --font-sans: 'DM Sans', system-ui, sans-serif;
+    --font-serif: 'DM Serif Text', serif;
+    --font-mono: 'DM Mono', monospace;
+    
+    /* Zero radius for brutalism */
+    --radius: 0px;
+    
+    /* Sidebar colors */
+    --sidebar-background: oklch(0.9800 0.0100 0);
+    --sidebar-foreground: oklch(0 0 0);
+    --sidebar-primary: oklch(0.6489 0.2370 26.9728);
+    --sidebar-primary-foreground: oklch(1.0000 0 0);
+    --sidebar-accent: oklch(0.8500 0.1500 120);
+    --sidebar-accent-foreground: oklch(0 0 0);
+    --sidebar-border: oklch(0 0 0);
+    --sidebar-ring: oklch(0.6489 0.2370 26.9728);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+/* Brutalist Utility Classes */
+@layer utilities {
+  .brutalist-shadow {
+    box-shadow: var(--shadow);
+  }
+  
+  .brutalist-shadow-sm {
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .brutalist-shadow-lg {
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .brutalist-shadow-xl {
+    box-shadow: var(--shadow-xl);
+  }
+  
+  .brutalist-shadow-colored {
+    box-shadow: var(--shadow-colored);
+  }
+  
+  .brutalist-shadow-teal {
+    box-shadow: var(--shadow-teal);
+  }
+  
+  .brutalist-border {
+    border: 3px solid oklch(0 0 0);
+  }
+  
+  .brutalist-border-thick {
+    border: 5px solid oklch(0 0 0);
+  }
+
+  /* Colorful backgrounds */
+  .bg-teal {
+    background-color: var(--teal);
+  }
+  
+  .text-teal-foreground {
+    color: var(--teal-foreground);
+  }
+  
+  .bg-yellow {
+    background-color: var(--yellow);
+  }
+  
+  .text-yellow-foreground {
+    color: var(--yellow-foreground);
+  }
+  
+  .bg-pink {
+    background-color: var(--pink);
+  }
+  
+  .text-pink-foreground {
+    color: var(--pink-foreground);
+  }
+  
+  .bg-blue {
+    background-color: var(--blue);
+  }
+  
+  .text-blue-foreground {
+    color: var(--blue-foreground);
+  }
+
+  /* Hover animations */
+  .hover-lift {
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 6px 6px 0px oklch(0 0 0);
+  }
+
+  .hover-bounce {
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .hover-bounce:hover {
+    transform: scale(1.05);
+  }
+
+  .hover-shake {
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .hover-shake:hover {
+    animation: shake 0.5s ease-in-out;
+  }
+
+  .slide-in {
+    animation: slideIn 0.6s ease-out;
+  }
+
+  .fade-in {
+    animation: fadeIn 0.8s ease-out;
+  }
+
+  .bounce-in {
+    animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+}
+
+/* Keyframe Animations */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Animate Bounce */
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-15%);
+    animation-timing-function: cubic-bezier(0.8,0,1,1);
+  }
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0,0,0.2,1);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
